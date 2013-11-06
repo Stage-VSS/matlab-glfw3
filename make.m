@@ -22,7 +22,7 @@ function make(rebuild)
     for i = 1:length(sourceFiles)
         source = sourceFiles(i);
         
-        [~, name] = fileparts(source.name);
+        [path, name] = fileparts(source.name);
         mexname = [name '.' mexext];
         mexfile = dir(mexname);
         
