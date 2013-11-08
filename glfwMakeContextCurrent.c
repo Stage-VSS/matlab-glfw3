@@ -4,13 +4,13 @@
 
 void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {
-	if (nrhs != 1)
-	{
-		mexErrMsgIdAndTxt("glfw:usage", "Usage: glfwMakeContextCurrent(window)");
-		return;
-	}
-	
-	GLFWwindow *window = (GLFWwindow *)*((uint64_t *)mxGetData(prhs[0]));
-	
-	glfwMakeContextCurrent(window);
+    if (nrhs != 1)
+    {
+        mexErrMsgIdAndTxt("glfw:usage", "Usage: glfwMakeContextCurrent(window)");
+        return;
+    }
+    
+    GLFWwindow *window = (GLFWwindow *)*((uint64_t *)mxGetData(prhs[0]));
+    
+    glfwMakeContextCurrent(window);
 }
