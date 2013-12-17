@@ -1,5 +1,5 @@
 #include <mex.h>
-#include <GLFW/glfw3.h>
+#include "GLFW/glfw3.h"
 #include <stdint.h>
 #include "uthash.h"
 
