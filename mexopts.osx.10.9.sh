@@ -170,7 +170,7 @@ echo "Error: Did not imbed 'options.sh' code"; exit 1 #imbed options.sh maci 12
             LDEXTENSION='.mexmaci64'
             LDFLAGS="-arch $ARCHS -Wl,-syslibroot,$MW_SDKROOT -mmacosx-version-min=$MACOSX_DEPLOYMENT_TARGET"
             LDFLAGS="$LDFLAGS -bundle -Wl,-exported_symbols_list,$TMW_ROOT/extern/lib/$Arch/$MAPFILE"
-            LDFLAGS="$LDFLAGS -framework Cocoa -framework OpenGL -framework IOKit -framework CoreVideo -Xlinker -rpath -Xlinker `pwd`"
+            LDFLAGS="$LDFLAGS -framework Cocoa -framework OpenGL -framework IOKit -framework CoreVideo -Xlinker -rpath -Xlinker @loader_path"
             LDOPTIMFLAGS='-O'
             LDDEBUGFLAGS='-g'
 #
