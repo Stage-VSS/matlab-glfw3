@@ -12,7 +12,7 @@ function make(rebuild)
     
     options = '';
     %options = [options ' -I/usr/local/include'];
-    options = [options ' -L' projectDir ' -lglfw3.3.0'];
+    options = [options ' -L' projectDir ' -lglfw3'];
     
     if ismac
         options = [options ' -f ' fullfile(projectDir, 'mexopts.osx.10.9.sh')];
