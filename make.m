@@ -11,7 +11,6 @@ function make(rebuild)
     cd(projectDir);
     
     options = '';
-    %options = [options ' -I/usr/local/include'];
     options = [options ' -L"' projectDir '" -lglfw3'];
     
     if ismac
