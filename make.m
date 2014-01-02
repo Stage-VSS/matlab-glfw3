@@ -14,7 +14,7 @@ function make(rebuild)
     options = [options ' -L"' projectDir '" -lglfw3'];
     
     if ismac
-        options = [options ' -f ' fullfile(projectDir, 'mexopts.osx.10.9.sh')];
+        options = [options ' LDFLAGS="\$LDFLAGS -framework Cocoa -framework OpenGL -framework IOKit -framework CoreVideo"'];
     end
     
     sourceFiles = dir(fullfile(projectDir, '*.c'));
