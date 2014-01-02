@@ -3,14 +3,17 @@
 
 void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {
+    int target;
+    int hint;
+    
     if (nrhs != 2)
     {
         mexErrMsgIdAndTxt("glfw:usage", "Usage: glfwWindowHint(target, hint)");
         return;
     }
     
-    int target = mxGetScalar(prhs[0]);
-    int hint = mxGetScalar(prhs[1]);
+    target = mxGetScalar(prhs[0]);
+    hint = mxGetScalar(prhs[1]);
         
     glfwWindowHint(target, hint);
 }

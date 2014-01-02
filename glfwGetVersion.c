@@ -3,15 +3,16 @@
 
 void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {
+    int major;
+    int minor;
+    int rev;
+    
     if (nrhs != 0)
     {
         mexErrMsgIdAndTxt("glfw:usage", "Usage: [major, minor, rev] = glfwGetVersion()");
         return;
     }
     
-    int major;
-    int minor;
-    int rev;
     glfwGetVersion(&major, &minor, &rev);
     
     plhs[0] = mxCreateDoubleScalar(major);

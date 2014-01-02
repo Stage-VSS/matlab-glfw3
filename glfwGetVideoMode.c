@@ -4,18 +4,22 @@
 
 void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {
+    GLFWmonitor *monitor;
+    const GLFWvidmode *mode;
+    const char *fieldNames[] = {"width", "height", "redBits", "greenBits", "blueBits", "refreshRate"};
+    mxArray *modeStruct;
+    
     if (nrhs != 1)
     {
         mexErrMsgIdAndTxt("glfw:usage", "Usage: mode = glfwGetVideoMode(monitor)");
         return;
     }
     
-    GLFWmonitor *monitor = (GLFWmonitor *)*((uint64_t *)mxGetData(prhs[0]));
+    monitor = (GLFWmonitor *)*((uint64_t *)mxGetData(prhs[0]));
         
-    const GLFWvidmode *mode = glfwGetVideoMode(monitor);
+    mode = glfwGetVideoMode(monitor);
     
-    const char *fieldNames[] = {"width", "height", "redBits", "greenBits", "blueBits", "refreshRate"}; 
-    mxArray *modeStruct = mxCreateStructMatrix(1, 1, sizeof(fieldNames) / sizeof(fieldNames[0]), fieldNames);
+    modeStruct = mxCreateStructMatrix(1, 1, sizeof(fieldNames) / sizeof(fieldNames[0]), fieldNames);
     mxSetField(modeStruct, 0, "width", mxCreateDoubleScalar(mode->width));
     mxSetField(modeStruct, 0, "height", mxCreateDoubleScalar(mode->height));
     mxSetField(modeStruct, 0, "redBits", mxCreateDoubleScalar(mode->redBits));

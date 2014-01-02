@@ -4,18 +4,23 @@
 
 void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {
+    int count;
+    GLFWmonitor **monitors;
+    mxArray *monitorAddrs;
+    uint64_t *addrs;
+    int i;
+    
     if (nrhs != 0)
     {
         mexErrMsgIdAndTxt("glfw:usage", "Usage: monitors = glfwGetMonitors()");
         return;
     }
     
-    int count;
-    GLFWmonitor **monitors = glfwGetMonitors(&count);
+    monitors = glfwGetMonitors(&count);
     
-    mxArray *monitorAddrs = mxCreateNumericMatrix(1, count, mxUINT64_CLASS, mxREAL);
-    uint64_t *addrs = (uint64_t *)mxGetData(monitorAddrs);
-    for(int i = 0; i < count; i++)
+    monitorAddrs = mxCreateNumericMatrix(1, count, mxUINT64_CLASS, mxREAL);
+    addrs = (uint64_t *)mxGetData(monitorAddrs);
+    for(i = 0; i < count; i++)
     {
         addrs[i] = (uint64_t)monitors[i];
     }

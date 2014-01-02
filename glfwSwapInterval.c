@@ -3,13 +3,15 @@
 
 void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {
+    int interval;
+    
     if (nrhs != 1)
     {
         mexErrMsgIdAndTxt("glfw:usage", "Usage: glfwSwapInterval(interval)");
         return;
     }
     
-    int interval = mxGetScalar(prhs[0]);
+    interval = mxGetScalar(prhs[0]);
         
     glfwSwapInterval(interval);
 }
