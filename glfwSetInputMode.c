@@ -4,19 +4,19 @@
 
 void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {
-    GLFWmonitor *monitor;
+    GLFWwindow *window;
     int mode;
     int value;
     
     if (nrhs != 3)
     {
-        mexErrMsgIdAndTxt("glfw:usage", "Usage: glfwSetInputMode(monitor, mode, value)");
+        mexErrMsgIdAndTxt("glfw:usage", "Usage: glfwSetInputMode(window, mode, value)");
         return;
     }
     
-    monitor = (GLFWmonitor *)*((uint64_t *)mxGetData(prhs[0]));
+    window = (GLFWwindow *)*((uint64_t *)mxGetData(prhs[0]));
     mode = mxGetScalar(prhs[1]);
     value = mxGetScalar(prhs[2]);
     
-    glfwSetInputMode(monitor, mode, value);
+    glfwSetInputMode(window, mode, value);
 }
