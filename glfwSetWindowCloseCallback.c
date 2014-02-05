@@ -37,7 +37,7 @@ void cleanup()
     {
         HASH_DEL(callbacks, cb);
         mxDestroyArray(cb->func);
-        free(cb);
+        mxFree(cb);
     }
 }
 
@@ -53,7 +53,7 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
     }
     mexAtExit(cleanup);
     
-    cb = malloc(sizeof(callback));
+    cb = mxMalloc(sizeof(callback));
     cb->window = (GLFWwindow *)*((uint64_t *)mxGetData(prhs[0]));
     cb->func = mxDuplicateArray((mxArray *)prhs[1]);
     mexMakeArrayPersistent(cb->func);
@@ -62,7 +62,7 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
     if (replaced != NULL)
     {
         mxDestroyArray(replaced->func);
-        free(replaced);
+        mxFree(replaced);
     }
     
     glfwSetWindowCloseCallback(cb->window, cbfun);

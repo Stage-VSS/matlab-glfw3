@@ -21,4 +21,6 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
     mxGetString(prhs[1], title, (mwSize)titleLen);
         
     glfwSetWindowTitle(window, title);
+    
+    mxFree(title);
 }

@@ -11,7 +11,7 @@ unsigned short* toUshortArray(mxArray *matrix)
     
     pointer = mxGetPr(matrix);
     size = mxGetN(matrix);
-    array = malloc(size * sizeof(unsigned short));
+    array = mxMalloc(size * sizeof(unsigned short));
     
     for (i = 0; i < size; i++)
     {
@@ -75,7 +75,7 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
     
     glfwSetGammaRamp(monitor, &ramp);
     
-    free(ramp.red);
-    free(ramp.green);
-    free(ramp.blue);
+    mxFree(ramp.red);
+    mxFree(ramp.green);
+    mxFree(ramp.blue);
 }

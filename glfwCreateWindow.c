@@ -44,4 +44,6 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
     *((uint64_t *)mxGetData(windowAddr)) = (uint64_t)window;
     
     plhs[0] = windowAddr;
+    
+    mxFree(title);
 }
