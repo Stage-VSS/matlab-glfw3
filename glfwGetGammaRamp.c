@@ -8,7 +8,7 @@ mxArray* toMatrix(unsigned short *array, unsigned int size)
     double *pointer;
     mwSize i;
     
-    matrix = mxCreateNumericMatrix(1, size, mxUINT8_CLASS, mxREAL);
+    matrix = mxCreateNumericMatrix(1, size, mxDOUBLE_CLASS, mxREAL);
     pointer = mxGetPr(matrix);
     for (i = 0; i < size; i++)
     {
