@@ -23,7 +23,4 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
         mexErrMsgIdAndTxt("glfw:failed", "An error occurred");
         return;
     }
-    
-    // Lock this function in memory to stop Windows from failing to init after calling "clear all" prior to glfwTerminate.
-    //mexLock();
 }
