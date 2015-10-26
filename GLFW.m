@@ -2,8 +2,8 @@ classdef GLFW
     
     properties (Constant)
         GLFW_VERSION_MAJOR          = 3
-        GLFW_VERSION_MINOR          = 0
-        GLFW_VERSION_REVISION       = 4
+        GLFW_VERSION_MINOR          = 1
+        GLFW_VERSION_REVISION       = 2
         GLFW_RELEASE                = 0
         GLFW_PRESS                  = 1
         GLFW_REPEAT                 = 2
@@ -175,7 +175,9 @@ classdef GLFW
         GLFW_ICONIFIED              = hex2dec('00020002')
         GLFW_RESIZABLE              = hex2dec('00020003')
         GLFW_VISIBLE                = hex2dec('00020004')
-        GLFW_DECORATED              = hex2dec('00020005')   
+        GLFW_DECORATED              = hex2dec('00020005')
+        GLFW_AUTO_ICONIFY           = hex2dec('00020006')
+        GLFW_FLOATING               = hex2dec('00020007')
         GLFW_RED_BITS               = hex2dec('00021001')
         GLFW_GREEN_BITS             = hex2dec('00021002')
         GLFW_BLUE_BITS              = hex2dec('00021003')
@@ -190,7 +192,8 @@ classdef GLFW
         GLFW_STEREO                 = hex2dec('0002100C')
         GLFW_SAMPLES                = hex2dec('0002100D')
         GLFW_SRGB_CAPABLE           = hex2dec('0002100E')
-        GLFW_REFRESH_RATE           = hex2dec('0002100F')   
+        GLFW_REFRESH_RATE           = hex2dec('0002100F')
+        GLFW_DOUBLEBUFFER           = hex2dec('00021010')
         GLFW_CLIENT_API             = hex2dec('00022001')
         GLFW_CONTEXT_VERSION_MAJOR  = hex2dec('00022002')
         GLFW_CONTEXT_VERSION_MINOR  = hex2dec('00022003')
@@ -198,7 +201,8 @@ classdef GLFW
         GLFW_CONTEXT_ROBUSTNESS     = hex2dec('00022005')
         GLFW_OPENGL_FORWARD_COMPAT  = hex2dec('00022006')
         GLFW_OPENGL_DEBUG_CONTEXT   = hex2dec('00022007')
-        GLFW_OPENGL_PROFILE         = hex2dec('00022008')   
+        GLFW_OPENGL_PROFILE         = hex2dec('00022008')
+        GLFW_CONTEXT_RELEASE_BEHAVIOR = hex2dec('00022009')
         GLFW_OPENGL_API             = hex2dec('00030001')
         GLFW_OPENGL_ES_API          = hex2dec('00030002')
         GLFW_NO_ROBUSTNESS          = 0
@@ -213,8 +217,18 @@ classdef GLFW
         GLFW_CURSOR_NORMAL          = hex2dec('00034001')
         GLFW_CURSOR_HIDDEN          = hex2dec('00034002')
         GLFW_CURSOR_DISABLED        = hex2dec('00034003')
+        GLFW_ANY_RELEASE_BEHAVIOR   = 0
+        GLFW_RELEASE_BEHAVIOR_FLUSH = hex2dec('00035001')
+        GLFW_RELEASE_BEHAVIOR_NONE  = hex2dec('00035002')
+        GLFW_ARROW_CURSOR           = hex2dec('00036001')
+        GLFW_IBEAM_CURSOR           = hex2dec('00036002')
+        GLFW_CROSSHAIR_CURSOR       = hex2dec('00036003')
+        GLFW_HAND_CURSOR            = hex2dec('00036004')
+        GLFW_HRESIZE_CURSOR         = hex2dec('00036005')
+        GLFW_VRESIZE_CURSOR         = hex2dec('00036006')
         GLFW_CONNECTED              = hex2dec('00040001')
         GLFW_DISCONNECTED           = hex2dec('00040002')
+        GLFW_DONT_CARE              = -1
     end
     
 end
