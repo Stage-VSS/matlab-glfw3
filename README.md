@@ -1,6 +1,6 @@
 # matlab-glfw3
 
-[GLFW 3](http://www.glfw.org) bindings for Matlab.
+[GLFW 3](http://www.glfw.org) bindings for MATLAB.
 
 ## Requirements
 
