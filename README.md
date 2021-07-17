@@ -1,4 +1,4 @@
-This repository is no longer being maintained. See https://github.com/cafarm/matlab-glfw for a maintained bindings.
+**This repository is no longer being maintained. See https://github.com/cafarm/matlab-glfw for maintained bindings.**
 
 # matlab-glfw3
 
