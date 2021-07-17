@@ -1,3 +1,5 @@
+This repository is no longer being maintained. See https://github.com/cafarm/matlab-glfw for a maintained bindings.
+
 # matlab-glfw3
 
 [GLFW 3](http://www.glfw.org) bindings for MATLAB.
